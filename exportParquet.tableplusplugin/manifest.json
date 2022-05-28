@@ -1,0 +1,17 @@
+{
+	"name": "Export Parquet",
+	"identifier": "com.summerlin.exportParquet",
+	"version": "1.0",
+	"detail": "Export data to Parquet",
+	"author": "Danny Summerlin",
+	"site": "https://github.com/dannysummerlin/exportParquet",
+	"email": "exportParquet@summerlin.co",
+	"scripts": [
+		{
+			"name": "Export Table to Parquet",
+			"script": "exportParquet.js",
+			"handler": "export",
+			"type": "action"
+		}
+	]
+}
