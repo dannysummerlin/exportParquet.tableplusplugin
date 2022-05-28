@@ -16,7 +16,7 @@ Install via Plugin Manager: `command + L`
 
 1. Open a connection.
 3. Right on a item in left panel.
-4. Select `Copy Script As` in menu.
+4. Select `Export Parquet` in menu.
 
 # License
 

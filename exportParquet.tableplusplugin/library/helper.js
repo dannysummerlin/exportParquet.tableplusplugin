@@ -1,5 +1,4 @@
 "use strict";
-
 var parquet = require('parquetjs');
 
 function dumpTableAsDefinition(context, item) {
@@ -43,7 +42,7 @@ function getColumnFormat(columnName, dataType) {
 	return returnType;
 }
 
-function transformToParquet(context, item) {
+async function transformToParquet(context, item) {
 	const schema = createSchema(context, item);
 	// filepath - try to do file selection popup
 	let filePath = 'temp.parquet';
@@ -56,12 +55,12 @@ function appendData(context,item, writer) {
 	const query = `SELECT * FROM '${item.name()}';`;
 	context.execute(query, res => {
 		res.rows.forEach(row => {
-			await writer.appendRow(JSON.encode(row));
+			writer.appendRow(JSON.encode(row));
 		});
 	});
 }
 
-function createSchema(context, item) {
+async function createSchema(context, item) {
 	let nameCamelcase = camelize(item.name());
 	let schemaObject = {};
 	let query;
