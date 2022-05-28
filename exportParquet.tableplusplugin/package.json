@@ -4,16 +4,14 @@
 	"description": "Export your table to a Parquet file",
 	"main": "main.js",
 	"devDependencies": {
-		"@babel/core": "^7.18.2",
+		"babel-core": "*",
 		"babel-loader": "*",
 		"babel-preset-env": "*",
-		"core-js": "*",
-		"parquetjs": "^0.11.2",
 		"webpack": "*",
-		"webpack-cli": "*"
+		"webpack-cli": "*",
+		"parquetjs": "^0.11.2"
 	},
 	"dependencies": {
-		"@babel/polyfill": "^7.12.1",
 		"parquetjs": "^0.11.2"
 	},
 	"scripts": {
@@ -23,6 +21,14 @@
 		"preset": [
 			"env"
 		]
+	},
+	"browser": {
+		"fs": false,
+		"path": false,
+		"os": false
+	},
+	"node": {
+		"fs": false
 	},
 	"keywords": [],
 	"author": "http://summerlin.co",
